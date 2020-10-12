@@ -284,9 +284,80 @@ a {
     
 }
 
-#abt h1,p{
+#abt h3,p {
     color: white;
 }
+
+.card {
+    width: 60%;
+    perspective: 800px;
+}
+
+.card_content {
+    position: relative;
+    padding: 10em;
+    transition: transform 3s;
+    background: #534278;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card_content,
+.card:active .card_content {
+    transform: rotateY(.5turn);
+}
+
+.card_front,
+.card_back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 17em 3em;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: grid;
+}
+
+.card_front::before {
+    content: '';
+    position: absolute;
+    top: 1.5em; 
+    bottom: 1.5em;
+    left: 1.5em;
+    right: 1.5em;
+    border: 2px solid white;
+    transform: translateZ(3rem);
+}
+
+.card_title {
+    font-size: 3rem;
+    transform: translateZ(6rem); 
+}
+
+.card_subtitle {
+    transform: translateZ(4rem);
+}
+
+.card_front {
+    /*transform: rotateY(.5turn);*/
+    text-align: center;
+    align-content: center;
+    background: #534278;
+}
+
+.card_back {
+    transform: rotateY(.5turn);
+    background: #534278;
+    display: table-cell;
+}
+.card_body {
+    transform: translateZ(3rem);
+
+}
+
+
+/* End of Card 3d Animation Styles*/
 
 .wrapper {
     justify-content: center;
